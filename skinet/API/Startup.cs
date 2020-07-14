@@ -30,6 +30,12 @@ namespace API
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
 
             services.AddSwaggerDocumentation();      // get from our custom extension folder
+            services.AddCors(opt=>{
+                opt.AddPolicy("CorsPolicy", policy=>
+                {
+                    policy.AllowAnyHeader().AllowAnyHeader().WithOrigins("https://localhost:4200");
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -43,6 +49,7 @@ namespace API
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
