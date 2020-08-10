@@ -3,3 +3,4 @@ obj
 appsettings.json
 *.db
 client
+/skinet/.vs
