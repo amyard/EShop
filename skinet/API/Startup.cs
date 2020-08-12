@@ -38,7 +38,9 @@ namespace API
                 return ConnectionMultiplexer.Connect(configuration);
             });
 
+            services.AddIdentityService();           // add identity services
             services.AddSwaggerDocumentation();      // get from our custom extension folder
+
             services.AddCors(opt=>{
                 opt.AddPolicy("CorsPolicy", policy=>
                 {
