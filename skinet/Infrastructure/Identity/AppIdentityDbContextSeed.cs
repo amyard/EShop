@@ -14,12 +14,12 @@ namespace Infrastructure.Identity
                 var user = new AppUser
                 {
                     DisplayName = "delme",
-                    Email = "delme@asd.com",
-                    UserName = "delme@asd.com",
+                    Email = "bob@test.com",
+                    UserName = "bob@test.com",
                     Address = new Address
                     {
-                        FirstName = "delme",
-                        LastName = "Awesome",
+                        FirstName = "Bob",
+                        LastName = "Bobbity",
                         Street = "10 the Streer",
                         City = "Valencia",
                         State = "VA",
@@ -27,7 +27,7 @@ namespace Infrastructure.Identity
                     }
                 };
 
-                await userManager.CreateAsync(user, "Admin123*");
+                await userManager.CreateAsync(user, "Pa$$w0rd");
             }
         }
     }
