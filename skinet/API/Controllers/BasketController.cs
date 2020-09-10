@@ -36,9 +36,9 @@ namespace API.Controllers
             return Ok(updateBasket);
         }
 
-        public async Task DeleteBasketAsync(string id)
-        {
-            await _basketRepository.DeleteBasketAsync(id);
-        }
+        // public async Task DeleteBasketAsync(string id)
+        // {
+        //     await _basketRepository.DeleteBasketAsync(id);
+        // }
     }
 }
